@@ -92,9 +92,13 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds update -a
-        git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
+        git clone --depth 1 https://github.com/kiddin9/kwrt-packages.git package/new/custom
         mv package/new/custom/luci-app-netspeedtest  package/new
         mv package/new/custom/speedtest-cli package/new
+        mv package/new/custom/luci-app-mwan3-ledhelper package/new
+        mv package/new/custom/luci-app-mwan3helper package/new
+        mv package/new/custom/mwan3-ledhelper package/new
+        mv package/new/custom/luci-app-ipsec-vpnd package/new 
         rm -rf package/new/custom
         ./scripts/feeds install -a
   
